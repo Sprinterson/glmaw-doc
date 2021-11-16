@@ -3,8 +3,8 @@ module.exports = {
     {
       resolve: "smooth-doc",
       options: {
-        name: "Smooth DOC Starter",
-        description: "Use your own description...",
+        name: "GLMAW Doc
+        description: "Documentation for Groupe Le Monde Ads Wrapper",
         siteUrl: "https://example.com",
       },
     },
