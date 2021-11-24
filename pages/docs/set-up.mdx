@@ -1,0 +1,42 @@
+---
+title: Installation
+section: Guide
+order: 2
+---
+
+# Installation
+Comment installer l'Ads Wrapper ?
+
+## Scripts fournis
+Le Wrapper se présente sous la forme de deux scripts distincts. 
+Le premier est un script de configuration dynamique, nommé `glmaw-config.js`. 
+Le second script, que l'on retrouve sous la forme `glmaw-vx.x.x.js` est le Wrapper lui-même. 
+
+
+## Pré-requis
+Il convient qu'une variable globale nommée `"ADS_CONFIG"`, sous forme d'objet, soit exposée dans le code HTML de la page, afin que le Wrapper puisse récupérer les informations concernant l'**Ad Unit** de la page (indispensable) et éventuellement d'autres options comme les **targets** (optionnel).
+
+```html
+<script>
+let ADS_CONFIG = {
+  "adUnit:" "/gam/global/path/",
+  "targeting:" {"keyword:" "a_la_une"},
+}
+</script>
+```
+
+## Script de configuration
+Le script de configuration, `glmaw-config`, doit être chargé dans le code HTML de la page après que l'objet `ADS_CONFIG` ait été mise en place. Le script récupérera dynamiquement les informations de cet objet, afin de mettre à jour les informations de configuration (changement d'**Ad Unit**, de **targeting** etc.)
+
+## Script du Wrapper
+Le script du Wrapper, `glmaw-vx.x.x.js`, doit être chargé soit après consentement de l'utilisateur via la CMP, soit s'il a déjà consenti par le passé. Le Wrapper traite alors les informations transmises par le script de configuration afin de correctement émettre les requêtes et l'affichage des pubs.
+
+## Positions publicitaires
+Une fois le script et la configuration en place, il suffit d’ajouter des marqueurs HTML aux emplacements où doivent se trouver les publicités.
+
+```html
+<div id="pave_haut" class="gam-slot" data-format="pave_haut"></div>
+```
+
+- Une **classe HTML** commune à toutes les positions est **obligatoire** (le nom de cette classe est à la préférence des développeurs de l'application, mais doit être précisée aux développeurs du Wrapper pour la pré-configuration de celui-ci), c’est ce qui permet au Wrapper de retrouver les emplacements publicitaires présents dans la page.
+- L’identifiant est facultatif, le Wrapper en calcule un automatiquement s’il n'est pas renseigné mais il préférable d'en préciser un.
