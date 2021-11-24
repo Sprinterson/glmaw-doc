@@ -26,7 +26,8 @@ let ADS_CONFIG = {
 ```
 
 ## Script de configuration
-Le script de configuration, `glmaw-config.js`, doit être chargé dans le code HTML de la page après que l'objet `ADS_CONFIG` ait été mise en place. Le script récupérera dynamiquement les informations de cet objet, afin de mettre à jour les informations de configuration (changement d'**Ad Unit**, de **targeting** etc.)
+Le script de configuration, `glmaw-config.js`, doit être chargé dans le code HTML de la page après que l'objet `ADS_CONFIG` ait été mise en place. Le script récupérera dynamiquement les informations de cet objet, afin de mettre à jour les informations de configuration (changement d'**Ad Unit**, de **targeting** etc.). Les options du script de configuration ne peuvent être pour l'instant éditées que par l'équipe de développement du Wrapper, mais peuvent être personnalisées à la demande de l'équipe de l'application.
+Il est possible d'afficher la configuration en tapant ```wrapperConfig``` dans la console du navigateur.
 
 ## Script du Wrapper
 Le script du Wrapper, `glmaw-vx.x.x.js`, doit être chargé soit après consentement de l'utilisateur via la CMP, soit s'il a déjà consenti par le passé. Le Wrapper traite alors les informations transmises par le script de configuration afin de correctement émettre les requêtes et l'affichage des pubs.
