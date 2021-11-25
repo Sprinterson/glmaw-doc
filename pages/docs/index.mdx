@@ -4,25 +4,25 @@ section: Guide
 order: 1
 ---
 
-# Présentation du Wrapper
+# Présentation du wrapper
 Qu'est-ce que l'Ads Wrapper et comment fonctionne-t-il ?
 
 ## But
-Le Wrapper doit gérer la logique de requête et de traitement des publicités affichées pour l'application sur laquelle il est chargé.
+Le wrapper doit gérer la logique de requête et de traitement des publicités affichées pour l'application sur laquelle il est chargé.
 
 ## Fonctionnement
-Dans sa version beta, une fois injecté dans le code HTML de la page, le Wrapper va :
+Dans sa version beta, une fois injecté dans le code HTML de la page, le wrapper va :
 - Charger les scripts et librairies externes de manière asynchrone.
 - Récupérer les informations requises (ad unit, marqueurs HTML des positions publicitaires présentes sur la page).
 - Se connecter à Google Ad Manager et lancer les requêtes de publicités avec les informations reçues.
 - Récupérer les réponses aux requêtes puis afficher les publicités sur les différentes positions de la page.
 
-Le Wrapper dispose d'une fonction de **refresh** automatique, ré-initialisant le processus et rechargeant les positions publicitaires après un certain temps passé sur la page (configurable sur demande) et d'une fonction de **lazyload**, pour seulement charger les positions publicitaires vquand elles deviennent visibles pour l'utilisateur.
+Le wrapper dispose d'une fonction de **refresh** automatique, ré-initialisant le processus et rechargeant les positions publicitaires après un certain temps passé sur la page (configurable sur demande) et d'une fonction de **lazyload**, pour seulement charger les positions publicitaires vquand elles deviennent visibles pour l'utilisateur.
 
-Dans ses versions ultérieures, le Wrapper gèrera l'**header bidding** via notamment la librairie **prebid.js** et ses différents modules **SSPs**.
+Dans ses versions ultérieures, le wrapper gèrera l'**header bidding** via notamment la librairie **prebid.js** et ses différents modules **SSPs**.
 
 ## Spécificités Single-Page Application
-Sur une SPA, lors d'un changement de route, le Wrapper détruit les slots publicitaires en mémoire, puis se ré-initialise, en récupérant au passage les données de configuration présentes sur la nouvelle route.
+Sur une SPA, lors d'un changement de route, le wrapper détruit les slots publicitaires en mémoire, puis se ré-initialise, en récupérant au passage les données de configuration présentes sur la nouvelle route.
 
 ## A propos
-Cette documentation sera mise à jour au fur et à mesure de l'évolution du Wrapper, notamment lors de l'ajout de l'**header bidding** et des modules **SSPs** relatifs.
+Cette documentation sera mise à jour au fur et à mesure de l'évolution du wrapper, notamment lors de l'ajout de l'**header bidding** et des modules **SSPs** relatifs.

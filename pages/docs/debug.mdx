@@ -1,0 +1,40 @@
+---
+title: Débogage
+section: Guide
+order: 3
+---
+
+# Débogage
+Comment déboguer l'Ads Wrapper ?
+
+## Logs
+Il est possible d'afficher des logs plus détaillés en ajoutant ```/?glmawdb=console``` à l'URL courante.
+
+## Configuration du wrapper
+Pour accéder (en lecture seule) à la configuration du wrapper, lancer la commande :
+```javascript
+glmaw.wrapperConfig
+```
+
+## Staging
+L'environnement staging est disponible sur tous les sites qui utilisent le wrapper.
+
+**Pour activer le mode staging sur un site :**
+1. Ouvrir les devtools (F12 sur Window / Linux, opt + command + i sur Mac)
+2. Lancer la commande suivante dans la console:
+
+```javascript
+glmaw.staging(true);
+```
+
+Le wrapper de production ne devrait plus rien faire et charger à la place le wrapper staging.
+
+**Pour désactiver le mode staging :**
+1. Ouvrir la console (F12 sur Window / Linux, opt + command + i sur Mac)
+2. Lancer la commande suivante dans la console:
+
+```javascript
+glmaw.staging(false);
+```
+
+L'url staging ne doit plus être présente dans l'onglet network.
