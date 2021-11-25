@@ -7,11 +7,8 @@ order: 2
 # Installation
 Comment installer l'Ads Wrapper ?
 
-## Scripts fournis
-Le Wrapper se présente sous la forme de deux scripts distincts. 
-Le premier est un script de configuration dynamique, nommé `glmaw-config.js`. 
-Le second script, que l'on retrouve sous la forme `glmaw-vx.x.x.js` est le Wrapper lui-même. 
-
+## Script fourni
+Le Wrapper se présente sous la forme d'une URL, se terminant par `glmaw.js`.
 
 ## Pré-requis
 Il convient qu'une variable globale nommée `"ADS_CONFIG"`, sous forme d'objet, soit exposée dans le code HTML de la page, afin que le Wrapper puisse récupérer les informations concernant l'**Ad Unit** de la page (indispensable) et éventuellement d'autres options comme les **targets** (optionnel).
@@ -25,12 +22,8 @@ let ADS_CONFIG = {
 </script>
 ```
 
-## Script de configuration
-Le script de configuration, `glmaw-config.js`, doit être chargé dans le code HTML de la page après que l'objet `ADS_CONFIG` ait été mise en place. Le script récupérera dynamiquement les informations de cet objet, afin de mettre à jour les informations de configuration (changement d'**Ad Unit**, de **targeting** etc.). Les options du script de configuration ne peuvent être pour l'instant éditées que par l'équipe de développement du Wrapper, mais peuvent être personnalisées à la demande de l'équipe de l'application.
-Il est possible d'afficher la configuration en tapant ```wrapperConfig``` dans la console du navigateur.
-
 ## Script du Wrapper
-Le script du Wrapper, `glmaw-vx.x.x.js`, doit être chargé soit après consentement de l'utilisateur via la CMP, soit s'il a déjà consenti par le passé. Le Wrapper traite alors les informations transmises par le script de configuration afin de correctement émettre les requêtes et l'affichage des pubs.
+Le script du Wrapper, `glmaw.js`, doit être chargé soit après consentement de l'utilisateur via la CMP, soit s'il a déjà consenti par le passé. Le Wrapper traite alors les informations transmises par `"ADS_CONFIG"` afin de correctement émettre les requêtes et l'affichage des pubs.
 
 ## Positions publicitaires
 Une fois le script et la configuration en place, il suffit d’ajouter des marqueurs HTML aux emplacements où doivent se trouver les publicités.
